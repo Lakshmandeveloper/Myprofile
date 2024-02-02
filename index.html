@@ -2,65 +2,67 @@
 <html>
 
 <head>
-    <title> lakshmantetali </title>
-    <link href=" images/lamborghini-logo.png" rel="icon" />
+    <title> Profile </title>
     <link href="profile.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-    <div display:inline-block>
-        <div id="mainheading">LAKSHMAN REDDY TETALI </div>
+    <div class="container">
+        <div display:inline-block>
+            <div id="mainheading">
+                <center>LAKSHMAN REDDY TETALI </center></div>
 
-        <div id="profile">
-            <div style="height:350px;width:25%;background-color:#6216aa;float:left;margin-left:7% ;margin-top:2%"
-                class="image"></div>
-            <div style="height:250px;width:57%;float:left;margin-left:5% ;margin-top:9%">
-                <div style="font-size: 20px"> Hai! I'm Lakshman , I have completed my bachelors from Electronics and
-                    Communication Engineering from Gitam Institute Of Technology ,Visakhapatnam, 2021 . I have little
-                    bit of coding experience in Python ,C ,sql and I am very much intersested to learn this web
-                    development course .</div>
+            <div id="profile">
+                <div style="height:350px;width:25%;background-color:#6216aa;float:left;margin-left:7% ;margin-top:2%"
+                    class="image"></div>
+                <div  id="_text">
+                    <p>"I am a highly motivated professional with a Master's degree in Information Studies from Trine University. My educational background includes a Bachelor's degree in Electronics and Communications Engineering from GITAM Institute of Technology, Visakhapatnam. I have practical experience in the field through an internship at Edureka, where I worked on MERN (MongoDB, Express.js, React, Node.js) stack development. This experience has equipped me with valuable skills and insights in the realm of Information Technology. I am passionate about leveraging my knowledge and skills to contribute meaningfully to projects and teams in the ever-evolving tech industry."</p>
+                </div>
+
+
             </div>
+         </div>
 
 
-        </div>
-     </div>
+            <h2><center>Geolocation</center></h2>
+            <hr/>
+            <button onclick="geolocation()">Geolocation</button>
 
+            <p id="out"></p>
+            <p id="address"></p>
 
-        <h2><center>Geolocation</center></h2>
-        <hr/>
-        <button onclick="geolocation()">Geolocation</button>
+            <script>
+                var x=document.getElementById("out")
+                var y=document.getElementById("address")
 
-        <p id="out"></p>
-        <p id="address"></p>
-
-        <script>
-            var x=document.getElementById("out")
-            var y=document.getElementById("address")
-
-            function geolocation(){
-                if(navigator.geolocation){
-                    navigator.geolocation.getCurrentPosition(showPosition)
-                }else{
-                    x.innerText="Geo not supported"
+                function geolocation(){
+                    if(navigator.geolocation){
+                        navigator.geolocation.getCurrentPosition(showPosition)
+                    }else{
+                        x.innerText="Geo not supported"
+                    }
                 }
-            }
 
-            function showPosition(data){
-                console.log(data)
-                x.innerText=`Latitude is ${data.coords.latitude}, longitude is ${data.coords.longitude}`
+                function showPosition(data){
+                    console.log(data)
+                    x.innerText=`Latitude is ${data.coords.latitude}, longitude is ${data.coords.longitude}`
 
-                var url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${data.coords.latitude},${data.coords.longitude}&key= AIzaSyCQ5kePCV1435C5qwJt0-Lf1xcQYRCC8pU`;
+                    var url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${data.coords.latitude},${data.coords.longitude}&key= AIzaSyCzdDudN2bvPSXAwFjL74zDMkHLAIY55L8`;
 
-                fetch(url)
-                .then((res) => res.json())
-                .then((data) => {
-                    console.log(data.results[0].formatted_address);
-                    y.innerText=data.results[0].formatted_address;
+                    fetch(url)
+                    .then((res) => res.json())
+                    .then((data) => {
+                        console.log(data.results[0].formatted_address);
+                        y.innerText=data.results[0].formatted_address;
 
 
-                })
-            }
-        </script>
+                    })
+                }
+            </script>
 
-</body>
-</html>
+    </body>
+    </html>
+    </div>

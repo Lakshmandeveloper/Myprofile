@@ -3,25 +3,32 @@ body{
 }
 #mainheading{
     height: 60px;
-
     text-align:left;
-
     font-size:28px;
-    background-color:#68493f
+    background-color:#f9bf95;
+    color:#b32e27;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
 }
 #profile{
     height: 400px;
 
-    background-color: #746e6c;
+    background-color:#d6743f;
 }
 .details{
     height:200px;
     width:50%;
-
-
+}
+#_text{
+    height:250px;
+    width:57%;
+    float:left;
+    margin-left:5% ;
+    margin-top:9%;
+    
 }
 .image{
-    background-image: url('../images/pic.jpg');
+    background-image: url('pic.jpg');
     height:350px;width:25%;
     border:4px groove gray;
     background-size:100%  350px
