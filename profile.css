@@ -23,6 +23,7 @@ body{
 .image{
     background-image: url('../images/pic.jpg');
     height:350px;width:25%;
+    border:4px groove gray;
     background-size:100%  350px
 }
 
